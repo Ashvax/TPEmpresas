@@ -46,14 +46,14 @@ public class EmpresasGestor extends javax.swing.JFrame {
     public void mostrarEmpleados() {
         Datos d = new Datos();
 
-        String[] col = {"Documento", "Nombre y Apellido", "Sueldo", "Empresa"};
+        String[] col = {"Documento", "Nombre y Apellido", "Sueldo", "Categoria", "Empresa"};
 
         DefaultTableModel tm;
         tm = new DefaultTableModel(col, 0);
 
         for (Empresa e : d.allEmpresas()) {
             for (Empleado em : e.getEmpleados()) {
-                Object[] dato = {em.getDni(), em.getNombreApellido(), em.getSueldo(), e.getRazonSocial()};
+                Object[] dato = {em.getDni(), em.getNombreApellido(), em.getSueldo(), em.getCategoria(), e.getRazonSocial()};
                 tm.addRow(dato);
             }
         }
